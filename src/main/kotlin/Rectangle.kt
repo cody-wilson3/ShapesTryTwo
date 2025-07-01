@@ -1,6 +1,6 @@
 package org.example
 
-class Rectangle(
+open class Rectangle(
     corner1: Point,
     corner2: Point
 ) : Shape() {

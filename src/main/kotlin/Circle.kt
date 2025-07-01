@@ -3,21 +3,17 @@ package org.example
 class Circle(
     center: Point,
     radius: Double
-){
-    var center: Point = center
-        private set
-    var radius: Double = radius
-        private set
+) : Ellipse(center, radius, radius){
 
     init {
         require(radius > 0) { "Radius must be greater than 0" }
     }
 
     fun getRadius(): Double {
-        return radius
+        return radius1
     }
 
-    fun getCenter(): Point {
+    override fun getCenter(): Point {
         return center
     }
 }

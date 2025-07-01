@@ -5,6 +5,12 @@ class Triangle(
     corner2: Point,
     corner3: Point
 ) : Shape() {
+
+    init {
+        require(area() > 0.0) {
+            "Area must be greater than zero"
+        }
+    }
     var corner1: Point = corner1
         private set
     var corner2: Point = corner2

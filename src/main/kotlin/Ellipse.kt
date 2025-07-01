@@ -5,6 +5,12 @@ open class Ellipse(
     radius1: Double,
     radius2: Double
 ) : Shape() {
+
+    init {
+        require( radius1 > 0) { "First radius param must be greater than 0." }
+        require( radius2 > 0) { "Second radius param must be greater than 0." }
+    }
+
     var center: Point = center
         private set
     var radius1: Double = radius1
@@ -12,7 +18,7 @@ open class Ellipse(
     var radius2: Double = radius2
         private set
 
-    fun getCenter(): Point {
+    open fun getCenter(): Point {
         return center
     }
     fun getRadius1(): Double {
