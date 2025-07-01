@@ -6,26 +6,38 @@ class Triangle(
     corner3: Point
 ) : Shape() {
 
+    // area calculation logic moved inside here since data members aren't initialized yet
+    // so calling area() crashes
     init {
-        require(area() > 0.0) {
+        val x1 = corner1.getMyX()
+        val y1 = corner1.getMyY()
+        val x2 = corner2.getMyX()
+        val y2 = corner2.getMyY()
+        val x3 = corner3.getMyX()
+        val y3 = corner3.getMyY()
+
+        val area = 0.5 * kotlin.math.abs(
+            x1 * (y2 - y3) +
+                    x2 * (y3 - y1) +
+                    x3 * (y1 - y2)
+        )
+
+        require(area > 0.0) {
             "Area must be greater than zero"
         }
     }
-    var corner1: Point = corner1
-        private set
-    var corner2: Point = corner2
-        private set
-    var corner3: Point = corner3
-        private set
+    private val corner1: Point = corner1
+    private val corner2: Point = corner2
+    private val corner3: Point = corner3
 
     fun getMyCorner1(): Point {
-        return corner1
+        return corner1.clonePoint()
     }
     fun getMyCorner2(): Point {
-        return corner2
+        return corner2.clonePoint()
     }
     fun getMyCorner3(): Point {
-        return corner3
+        return corner3.clonePoint()
     }
     override fun move(deltaX: Double, deltaY: Double) {
         corner1.move(deltaX, deltaY)

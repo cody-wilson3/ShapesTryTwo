@@ -6,10 +6,17 @@ class Line(
     start: Point,
     end: Point
 ) {
-    var start: Point = start.clonePoint()
-        private set
-    var end: Point = end.clonePoint()
-        private set
+
+    init {
+        val dx = start.getMyX() - end.getMyX()
+        val dy = start.getMyY() - end.getMyY()
+        val length = sqrt(dx * dx + dy * dy)
+
+        require(length != 0.0) { "A line cannot have zero length." }
+    }
+
+    private val start: Point = start.clonePoint()
+    private val end: Point = end.clonePoint()
 
     fun getMyStart(): Point {
         return start.clonePoint()
@@ -23,10 +30,6 @@ class Line(
     fun getSlope(): Double {
         val deltaX = end.getMyX() - start.getMyX()
         val deltaY = end.getMyY() - start.getMyY()
-
-        require(deltaX != 0.0 || deltaY != 0.0) {
-            "Slope is undefined for a zero-length line."
-        }
 
         val angleRadians = kotlin.math.atan2(deltaY, deltaX)
         val angleDegrees = Math.toDegrees(angleRadians)

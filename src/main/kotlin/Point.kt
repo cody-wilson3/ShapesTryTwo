@@ -4,10 +4,8 @@ class Point(
     x: Double,
     y: Double
 ){
-    var x: Double = x
-        private set
-    var y: Double = y
-        private set
+    private var x: Double = x
+    private var y: Double = y
 
     fun getMyX(): Double = x
     fun getMyY(): Double = y
