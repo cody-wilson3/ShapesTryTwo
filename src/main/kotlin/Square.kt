@@ -6,8 +6,8 @@ class Square(
 ) : Rectangle(corner1, corner2){
 
     init {
-        val width = kotlin.math.abs(corner1.getX() - corner2.getX())
-        val height = kotlin.math.abs(corner1.getY() - corner2.getY())
+        val width = kotlin.math.abs(corner1.getMyX() - corner2.getMyX())
+        val height = kotlin.math.abs(corner1.getMyY() - corner2.getMyY())
         require(width == height) { "A square must have equal width and height." }
     }
 }

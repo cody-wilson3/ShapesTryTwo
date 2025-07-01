@@ -9,8 +9,8 @@ class Point(
     var y: Double = y
         private set
 
-    fun getX(): Double = x
-    fun getY(): Double = y
+    fun getMyX(): Double = x
+    fun getMyY(): Double = y
     fun clonePoint(): Point {
         return Point(x, y)
     }

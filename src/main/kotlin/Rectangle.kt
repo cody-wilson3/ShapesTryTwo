@@ -9,10 +9,10 @@ open class Rectangle(
     var corner2: Point = corner2
         private set
 
-    fun getCorner1(): Point {
+    fun getMyCorner1(): Point {
         return corner1
     }
-    fun getCorner2(): Point {
+    fun getMyCorner2(): Point {
         return corner2
     }
     override fun move(deltaX: Double, deltaY: Double) {
@@ -21,8 +21,8 @@ open class Rectangle(
     }
 
     override fun area(): Double {
-        val width = kotlin.math.abs(corner1.getX() - corner2.getX())
-        val height = kotlin.math.abs(corner1.getY() - corner2.getY())
+        val width = kotlin.math.abs(corner1.getMyX() - corner2.getMyX())
+        val height = kotlin.math.abs(corner1.getMyY() - corner2.getMyY())
         return width * height
     }
 }

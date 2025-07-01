@@ -11,18 +11,18 @@ class Line(
     var end: Point = end.clonePoint()
         private set
 
-    fun getStart(): Point {
+    fun getMyStart(): Point {
         return start.clonePoint()
     }
 
-    fun getEnd(): Point {
+    fun getMyEnd(): Point {
         return end.clonePoint()
     }
 
     // returns number of degrees of the line in Double type
     fun getSlope(): Double {
-        val deltaX = end.getX() - start.getX()
-        val deltaY = end.getY() - start.getY()
+        val deltaX = end.getMyX() - start.getMyX()
+        val deltaY = end.getMyY() - start.getMyY()
 
         require(deltaX != 0.0 || deltaY != 0.0) {
             "Slope is undefined for a zero-length line."
@@ -34,8 +34,8 @@ class Line(
     }
 
     fun getLength(): Double {
-        val dx = end.getX() - start.getX()
-        val dy = end.getY() - start.getY()
+        val dx = end.getMyX() - start.getMyX()
+        val dy = end.getMyY() - start.getMyY()
         return sqrt(dx * dx + dy * dy)
     }
 

@@ -1,19 +1,15 @@
 package org.example
 
 class Circle(
-    center: Point,
+    centerCircle: Point,
     radius: Double
-) : Ellipse(center, radius, radius){
+) : Ellipse(centerCircle, radius, radius){
 
     init {
         require(radius > 0) { "Radius must be greater than 0" }
     }
 
     fun getRadius(): Double {
-        return radius1
-    }
-
-    override fun getCenter(): Point {
-        return center
+        return getRadius1()
     }
 }

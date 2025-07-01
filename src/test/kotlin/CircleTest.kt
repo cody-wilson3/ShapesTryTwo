@@ -10,8 +10,8 @@ class CircleTest {
         val circle = Circle(center, 5.0)
 
         assertEquals(5.0, circle.getRadius(), "Radius should be 5.0")
-        assertEquals(0.0, circle.getCenter().getX())
-        assertEquals(0.0, circle.getCenter().getY())
+        assertEquals(0.0, circle.getCenter().getMyX())
+        assertEquals(0.0, circle.getCenter().getMyY())
     }
 
     @Test
@@ -39,7 +39,7 @@ class CircleTest {
         val copy = circle.getCenter()
         copy.move(100.0, 100.0)
 
-        assertEquals(5.0, circle.getCenter().getX())
-        assertEquals(6.0, circle.getCenter().getY())
+        assertEquals(5.0, circle.getCenter().getMyX())
+        assertEquals(6.0, circle.getCenter().getMyY())
     }
 }

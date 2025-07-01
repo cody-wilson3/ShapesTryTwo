@@ -7,19 +7,16 @@ open class Ellipse(
 ) : Shape() {
 
     init {
-        require( radius1 > 0) { "First radius param must be greater than 0." }
-        require( radius2 > 0) { "Second radius param must be greater than 0." }
+        require( radius1 > 0) { "Radius must be greater than 0" }
+        require( radius2 > 0) { "Radius must be greater than 0" }
     }
 
-    var center: Point = center
-        private set
-    var radius1: Double = radius1
-        private set
-    var radius2: Double = radius2
-        private set
+    private val center: Point = center
+    private val radius1: Double = radius1
+    private val radius2: Double = radius2
 
     open fun getCenter(): Point {
-        return center
+        return center.clonePoint()
     }
     fun getRadius1(): Double {
         return radius1

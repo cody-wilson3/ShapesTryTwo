@@ -18,13 +18,13 @@ class Triangle(
     var corner3: Point = corner3
         private set
 
-    fun getCorner1(): Point {
+    fun getMyCorner1(): Point {
         return corner1
     }
-    fun getCorner2(): Point {
+    fun getMyCorner2(): Point {
         return corner2
     }
-    fun getCorner3(): Point {
+    fun getMyCorner3(): Point {
         return corner3
     }
     override fun move(deltaX: Double, deltaY: Double) {
@@ -34,12 +34,12 @@ class Triangle(
     }
 
     override fun area(): Double {
-        val x1 = corner1.getX()
-        val y1 = corner1.getY()
-        val x2 = corner2.getX()
-        val y2 = corner2.getY()
-        val x3 = corner3.getX()
-        val y3 = corner3.getY()
+        val x1 = corner1.getMyX()
+        val y1 = corner1.getMyY()
+        val x2 = corner2.getMyX()
+        val y2 = corner2.getMyY()
+        val x3 = corner3.getMyX()
+        val y3 = corner3.getMyY()
 
         return 0.5 * kotlin.math.abs(
             x1 * (y2 - y3) +
